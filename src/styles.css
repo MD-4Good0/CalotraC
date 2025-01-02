@@ -17,3 +17,15 @@
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(12, 12, 12)
   }
+
+  .custom-ok-button {
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* Remove border */
+    padding: 10px 20px;         /* Add padding */
+    border-radius: 5px;         /* Round the corners */
+  }
+  
+  .custom-ok-button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+  }

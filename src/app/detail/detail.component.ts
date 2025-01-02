@@ -69,37 +69,71 @@ export class DetailComponent {
     
   }
 
-  editDet(){
-    this.service.updateDetail(this.user_id,this.userDet)
-    .subscribe({
-      next: (v) =>{
-        if(v===null)
-          {Swal.fire('Error', 'ID not accessible', 'error')
+  editDet() {
+    this.service.updateDetail(this.user_id, this.userDet)
+      .subscribe({
+        next: (v) => {
+          if (v === null) {
+            Swal.fire({
+              title: 'Error',
+              text: 'ID not accessible',
+              icon: 'error',
+              customClass: {
+                confirmButton: 'custom-ok-button'  // Custom button class
+              },
+              showConfirmButton: true,
+              confirmButtonText: 'OK',
+              timer: 3000,
+              toast: true,
+              position: 'top-end',
+              timerProgressBar: true
+            });
+          } else {
+            Swal.fire({
+              title: 'Saved',
+              text: 'Data has been updated',
+              icon: 'success',
+              customClass: {
+                confirmButton: 'custom-ok-button'  // Custom button class
+              },
+              showConfirmButton: true,
+              confirmButtonText: 'OK',
+              timer: 3000,
+              toast: true,
+              position: 'top-end',
+              timerProgressBar: true
+            });
           }
-          Swal.fire('Saved', 'Data has been updated', 'success')
-        // this.prov=v;
-        //  Swal.fire('Registered', 'RP ID: '+this.prov.rpID, 'success')},
-        console.log(this.userDet)},
-      // error: (e) => Swal.fire('Error', 'Wrong Credentials', 'error')
-      // complete: () => this.router.navigate(['provider-home']) 
-    })
+          console.log(this.userDet);
+        },
+        // error: (e) => Swal.fire('Error', 'Wrong Credentials', 'error')
+        // complete: () => this.router.navigate(['provider-home'])
+      });
   }
-
-  regDet(){
-    this.service.addDetail(this.user_id,this.userDet)
-    .subscribe({
-      next: (v) =>{
-        Swal.fire('Saved', 'Data has been updated', 'success')
-        // if(v===null)
-        //   {Swal.fire('Error', 'ID not accessible', 'error')
-        //   }
-        // this.prov=v;
-        //  Swal.fire('Registered', 'RP ID: '+this.prov.rpID, 'success')},
-        console.log(this.userDet)},
-      // error: (e) => Swal.fire('Error', 'Wrong Credentials', 'error')
-      // complete: () => this.router.navigate(['provider-home']) 
-    })
-
+  
+  regDet() {
+    this.service.addDetail(this.user_id, this.userDet)
+      .subscribe({
+        next: (v) => {
+          Swal.fire({
+            title: 'Saved',
+            text: 'Data has been updated',
+            icon: 'success',
+            customClass: {
+              confirmButton: 'custom-ok-button'  // Custom button class
+            },
+            showConfirmButton: true,
+            confirmButtonText: 'OK',
+            timer: 3000,
+            toast: true,
+            position: 'top-end',
+            timerProgressBar: true
+          });
+          console.log(this.userDet);
+        },
+        // error: (e) => Swal.fire('Error', 'Wrong Credentials', 'error')
+        // complete: () => this.router.navigate(['provider-home'])
+      });
   }
 
 }
