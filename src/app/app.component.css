@@ -1,0 +1,10 @@
+.background-image {
+  background-image: url('../assets/BG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+  
+div, label, h2, input, option {
+  font-family: 'Poppins';
+}

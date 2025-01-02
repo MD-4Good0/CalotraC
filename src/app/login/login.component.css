@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Set minimum viewport height */
+  background-color: transparent; /* Light gray background */
+  padding-bottom: 50px; /* Add margin around the form */
+  padding-top: 40px;
+}
+
+.form-wrapper {
+  display: inline;
+  background-color: #ffffffda; /* White background for the form */
+  border-radius: 5px; /* Add rounded corners */
+  padding: 30px; /* Add padding inside the form */
+  max-width: 400px; /* Set maximum width for the form */
+}
+
+div, label, h2, input, option {
+  font-family: 'Poppins';
+}
+
+img {
+  width: 40px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #ff2f00;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 123012px;
+}

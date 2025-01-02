@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Set minimum viewport height */
+  background-color: transparent; /* Light gray background */
+  padding-bottom: 50px;
+  padding-top: 40px;
+  }
+
+.form-wrapper {
+  color: white;
+  background-color: #1f1f1fd3; /* White background for the form */
+  border-radius: 5px; /* Add rounded corners */
+  padding: 30px; /* Add padding inside the form */
+  max-width: 60%; /* Set maximum width for the form to cover 60% of the page */
+}
+
+div, label, h2, input, option {
+  font-family: 'Poppins';
+}

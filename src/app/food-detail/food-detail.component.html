@@ -1,0 +1,122 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h1>Log Your {{type}} Meal</h1>
+    <hr class="mt-0 mb-6 text-center">
+    <!--
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="image">Log From Image:</label>
+      </div>
+      
+      <div class="form-group mb-3 d-flex align-items-center">
+        <input type="file" class="form-control w-80" id="image" (change)="onFileSelected($event)">
+        <button type="submit" class="btn btn-primary ml-3 upload">Upload</button>
+      </div>
+      
+    </form>
+    -->
+
+    <!-- <hr class="mt-0 mb-4 text-center"> -->
+    <h2>Enter Your Meal Through Gemini</h2>
+    <!-- <hr class="mt-0 mb-4 text-center"> -->
+    <form (ngSubmit)="onMealSubmit()">
+      <div class="form-group mb-3">
+        <label for="item_name">Item Name</label>
+        <input type="text" class="form-control" id="item_name" [(ngModel)]="txt.name" name="item_name">
+      </div>
+      <div class="form-group mb-4">
+        <div class="form-group mb-3 row">
+          <div class="col">
+            <label for="qty">Quantity</label>
+            <input type="number" class="form-control" id="qty" [(ngModel)]="txt.qty" name="qty">
+          </div>
+          <div class="col">
+            <label for="unit">Unit</label>
+            <select class="form-control" id="unit" [(ngModel)]="txt.unit" name="unit">
+              <option value="grams">grams</option>
+              <option value="litres">servings</option>
+              <option value="">not necessary</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mb-3">
+        <button type="submit" class="btn btn-primary">Save Through Gemini</button>
+      </div>
+    </form>
+
+
+    <h2>... Or Enter Your Meal Manually</h2>
+    <form (ngSubmit)="onManualSubmit()">
+      <!-- Item Name -->
+      <div class="form-group mb-3">
+        <label for="item_name">Item Name</label>
+        <input type="text" class="form-control" id="item_name" [(ngModel)]="txtManual.item_name" name="item_name"
+          required>
+      </div>
+
+      <!-- Quantity, Unit, and Calories -->
+      <div class="form-group mb-3">
+        <div class="form-group mb-3 row">
+          <div class="col">
+            <label for="qty">Quantity</label>
+            <input type="number" class="form-control" id="qty" [(ngModel)]="txtManual.qty" name="qty" required min="1">
+          </div>
+          <div class="col">
+            <label for="unit">Unit</label>
+            <select class="form-control" id="unit" [(ngModel)]="txtManual.unit" name="unit" required>
+              <option value="grams">grams</option>
+              <option value="litres">servings</option>
+              <option value="">not necessary</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="unit">Calories</label>
+            <input type="number" class="form-control" id="calories" [(ngModel)]="txtManual.calories" name="calories"
+              required min="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Protein, Carbs, and Fats -->
+      <div class="form-group mb-4">
+        <div class="form-group mb-3 row">
+          <div class="col">
+            <label for="protein">Protein (g)</label>
+            <input type="number" class="form-control" id="protein" [(ngModel)]="txtManual.protein" name="protein"
+              required min="0">
+          </div>
+          <div class="col">
+            <label for="carbohydrates">Carbohydrates (g)</label>
+            <input type="number" class="form-control" id="carbohydrates" [(ngModel)]="txtManual.carbohydrates"
+              name="carbohydrates" required min="0">
+          </div>
+          <div class="col">
+            <label for="fat">Fat (g)</label>
+            <input type="number" class="form-control" id="fat" [(ngModel)]="txtManual.fat" name="fat" required min="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Save Manually</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+<!-- Modal -->
+<!-- Modal -->
+
+<div class="spinner-overlay" *ngIf="loading">
+  <div class="spinner-container">
+    <div class="spinner-border" style="width: 5rem; height: 5rem;" role="status" *ngIf="loading">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner"></div>
+  </div>
+</div>

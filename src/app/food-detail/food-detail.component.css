@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    min-height: 128vh;
+  }
+  
+  .form-wrapper {
+    background-color: #ffffffda;
+    border-radius: 5px;
+    padding: 30px;
+    width: 45%;
+    margin: 0 10px;
+  }
+
+  .upload{
+    margin-left: 10px;
+  }
+  
+  .form-wrapper:first-child {
+    margin-right: 0;
+  }
+  
+  .form-wrapper:last-child {
+    margin-left: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .vertical-line {
+    border-left: 2px solid #000000;
+    height: 100%;
+    margin: 0 20px;
+  }
+  
+  .instruction {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Spinner Container */
+  .spinner-container {
+    position: relative;
+    width: 100px; /* Adjust the width of the container */
+    height: 100px; /* Adjust the height of the container */
+  }
+  
+  /* Spinner */
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Add your spinner styles here */
+  }
+
+  .btn {
+    background-color: #da3d1a;
+    width: 520px;
+    border-color: transparent
+  }

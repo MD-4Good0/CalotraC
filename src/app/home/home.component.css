@@ -1,0 +1,222 @@
+
+  .pgcon {
+    width: 90%;
+    margin: 0 auto; /* Centers the container horizontally */
+    background-color: transparent; /* Sets the background color to white */
+    padding: 20px; /* Adds some padding to the container */
+    /* overflow-y: hidden; */
+    height: auto;
+  }
+
+  .ot {
+    width: 97.5%;
+    height: auto;
+    margin: 0 auto; /* Centers the container horizontally */
+    background-color: #fff; /* Sets the background color to white */
+    padding: 20px; /* Adds some padding to the container */
+  }
+  
+  .wt{
+    font-weight: bold; /* Make the text bold */
+      text-align: left; /* Align the text to the center */
+      color: #ffffff;
+    
+  }
+  .nwt{
+    font-weight: bold; /* Make the text bold */
+    font-size: x-large;
+    color: #da3d1a;
+      text-align: left; /* Align the text to the center */
+  }
+
+  .cont{
+    font-size: 15px;
+    background-color: #fff;
+    width: 300px;
+    padding: 10px; 
+    border-radius: 10px;   
+  }
+  
+  .green-bar {
+    background-color: green !important; /* Sets the background color to green */
+  }
+  
+  .red-bar {
+    background-color: red !important; /* Sets the background color to red */
+  }
+
+  .PM {
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Align the text to the center */
+    padding-top: 10px; /* Provide padding top */
+  }
+
+ .row{
+  margin: 0 auto;
+ }
+
+ .chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 460px;
+  width: 600px;
+  margin-top: 0px;
+  margin-bottom: -40px;
+}
+
+  #MyChart {
+    width: 400px;
+  }
+
+ .jumbotron{
+  margin-bottom: 2%;
+ }
+
+ .custom-text-bg-success{
+  background-color: #D4AF37; /* Blue */
+    color: #fff; /* White text */
+ }
+
+ .custom-text-bg-info{
+  background-color: #6667AB; /* Blue */
+    color: #fff; /* White text */
+ }
+
+ .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ .custom-text-bg-warning{
+  background-color: #D35400; /* Blue */
+    color: #fff; /* White text */
+ }
+
+ .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-input label {
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.form-group input[type="date"] {
+  width: 300px;
+  border: none;
+  font-size: 15px;
+}
+
+/* Optional CSS for card and chart */
+.abc {
+  height: 100%;
+  
+}
+
+.card {
+  background-color: transparent;
+}
+
+.food{
+  max-height: 250px; 
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: none;
+}
+
+.card-header {
+  background-color: #da3d1a;
+  border-bottom: 1px solid #ddd;
+  border: none;
+  color: #fff;
+  text-align: center;
+}
+
+.list-group-item {
+  background-color: #1f1f1fd3;
+  color: white;
+}
+/* Progress container */
+.progress-container {
+  height: 20px;
+  border-radius: 30px; /* Rounded corners */
+  background-color: #ffffff; /* Light gray background for the container */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow around the progress container */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 100%;
+  border-radius: 30px; /* Matching rounded corners for the progress bar */
+  transition: width 0.4s ease-in-out; /* Smooth transition when updating */
+  text-align: center;
+  line-height: 20px; /* Vertically centers the text */
+  color: white;
+  font-weight: bold;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Green Bar: Goal Achieved or Exceeded */
+.green-bar {
+  background-color: #28a745 !important; /* Green color for meeting or exceeding goal */
+}
+
+/* Red Bar: Below or Exceeding Target (depending on goal) */
+.red-bar {
+  background-color: #dc3545 !important; /* Red color for falling behind or exceeding goal */
+}
+
+/* Glow effect when calories exceed target */
+.glow-red {
+  animation: glow-red 1s infinite alternate; /* Red glow effect */
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.6); /* Red glow */
+}
+
+@keyframes glow-red {
+  0% {
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.6); /* Red glow */
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(220, 53, 69, 1); /* Stronger red glow */
+  }
+}
+
+.custom-text-bg-primary {
+  background-color: #ff2f00; /* Tomato red for Calories */
+  color: white;
+}
+
+.custom-text-bg-success {
+  background-color: #8A2BE2; /* Green for Protein */
+  color: white;
+}
+
+.custom-text-bg-info {
+  background-color: #FFD700; /* Light Blue for Fat */
+  color: rgb(22, 22, 22);
+}
+
+.custom-text-bg-warning {
+  background-color: #FFA07A; /* Yellow for Carbohydrates */
+  color: rgb(22, 22, 22);
+}
+
+.btn {
+  background-color: #000000cc;
+}
+
+div, label, h2, input, option, p {
+  font-family: 'Poppins';
+}
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

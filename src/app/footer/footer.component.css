@@ -1,0 +1,10 @@
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff2f00;
+}
+
+div, label, h2, input, option {
+    font-family: 'Poppins';
+}

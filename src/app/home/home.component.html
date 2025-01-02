@@ -1,0 +1,160 @@
+<div class="container pgcon">
+    <br><br>
+    <div class="container pgcon">
+        <div class="row">
+            <!-- Card with details -->
+            <div class="col-md-4 mb-3">
+                <div class="card abc" style="background-color: #1f1f1fd3;">
+                    <div class="card-body">
+                        <!-- Add your details here -->
+                        <p class="wt">Welcome, </p>
+                        <p class="nwt">{{ user.user_name }}!</p>
+                        <p class="wt">Current Weight</p>
+                        <p class="cont">{{ userDet.weight }}Kg</p>
+                        <p class="wt">Target Weight</p>
+                        <p class="cont">{{ userDet.target_weight }}Kg</p>
+                        <p class="wt">Recomended Calorie Intake</p>
+                        <p class="cont">{{ userDet.bmr.toFixed(2) }}Cal</p>
+                        <!-- Add more details as needed -->
+                        <!-- Input box with light grey background -->
+                        <div class="form-group">
+                            <label class="wt" for="exampleInput">Select Date</label>
+                            <input type="date" class="form-control" id="selectedDate" [(ngModel)]="dateFromHTML"
+                                (ngModelChange)="ngOnInit()" (ngModelChange)="this.chart.destroy();">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="col-md-8 mb-3">
+                <div class="card abc" style="background-color: #1f1f1fd3;">
+
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="MyChart">{{ chart }}</canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container ot rounded card" style="background-color: #1f1f1fd3;">
+            <div class="progress progress-container">
+                <div class="progress-bar" [style.width.%]="totCalP" role="progressbar" [attr.aria-valuenow]="totCalP"
+                    aria-valuemin="0" [attr.aria-valuemax]="maxCal" [ngClass]="{
+                        'green-bar': (goal === 'gain' && totCal >= maxCal) || (goal === 'lose' || goal === 'maintain') && totCal <= maxCal,
+                        'red-bar': (goal === 'gain' && totCal < maxCal) || (goal === 'lose' || goal === 'maintain') && totCal > maxCal,
+                        'glow-red': (totCal > maxCal && (goal === 'lose' || goal === 'maintain')) || (totCal < maxCal && goal === 'gain')
+                    }">
+                    {{ totCal === 0 ? '0' : totCal.toFixed(2) + '/' + maxCal.toFixed(2) }}
+                </div>
+            </div>
+            <p class="PM" style="font-weight: bolder; color:#fff;">{{ progressMessage }}</p>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card food">
+                    <div class="card-header">
+                        Breakfast
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action flex-column align-items-start"
+                            *ngFor="let item of bfList">
+                            {{ item.item_name }}<br/>
+                            <span class="badge text-bg-primary mr-1">{{item.calories}}Cal</span>
+                            <span class="badge custom-text-bg-success mr-1">{{item.protein}}g</span>
+                            <span class="badge custom-text-bg-info mr-1">{{item.fat}}g</span>
+                            <span class="badge custom-text-bg-warning mr-1">{{item.carbohydrates}}g</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action" 
+                            style= "display: flex; 
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;">
+                            <button (click)="addBreakfast()" class="btn" style="color: #fff; width: 230px;" href="#" role="button">Add
+                                Meal</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card food">
+                    <div class="card-header">
+                        Lunch
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action flex-column align-items-start"
+                            *ngFor="let item of lunchList">
+                            {{ item.item_name }}<br/>
+                            <span class="badge text-bg-primary mr-1">{{item.calories}}Cal</span>
+                            <span class="badge custom-text-bg-success mr-1">{{item.protein}}g</span>
+                            <span class="badge custom-text-bg-info mr-1">{{item.fat}}g</span>
+                            <span class="badge custom-text-bg-warning mr-1">{{item.carbohydrates}}g</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action" 
+                            style= "display: flex; 
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;">
+                            <button (click)="addLunch()" class="btn" style="color: #fff; width: 230px;" href="#" role="button">Add
+                                Meal</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card food">
+                    <div class="card-header">
+                        Snacks
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action flex-column align-items-start"
+                            *ngFor="let item of snacksList">
+                            {{ item.item_name }}<br/>
+                            <span class="badge text-bg-primary mr-1">{{item.calories}}Cal</span>
+                            <span class="badge custom-text-bg-success mr-1">{{item.protein}}g</span>
+                            <span class="badge custom-text-bg-info mr-1">{{item.fat}}g</span>
+                            <span class="badge custom-text-bg-warning mr-1">{{item.carbohydrates}}g</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action" 
+                            style= "display: flex; 
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;">
+                            <button (click)="addSnacks()" class="btn" style="color: #fff; width: 230px;" href="#" role="button">Add
+                                Meal</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card food">
+                    <div class="card-header">
+                        Dinner
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action flex-column align-items-start"
+                            *ngFor="let item of dinnerList">
+                            {{ item.item_name }}<br/>
+                            <span class="badge text-bg-primary mr-1">{{item.calories}}Cal</span>
+                            <span class="badge custom-text-bg-success mr-1">{{item.protein}}g</span>
+                            <span class="badge custom-text-bg-info mr-1">{{item.fat}}g</span>
+                            <span class="badge custom-text-bg-warning mr-1">{{item.carbohydrates}}g</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action" 
+                            style= "display: flex; 
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;">
+                            <button (click)="addDinner()" class="btn" style="color: #fff; width: 230px;" href="#" role="button">Add
+                                Meal
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

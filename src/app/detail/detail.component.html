@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Want to Edit Your Information?</h2>
+    <hr class="mt-0 mb-4 text-center" style="border: 1px solid #FF6347;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" [(ngModel)]="userDet.age" name="age">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" [(ngModel)]="userDet.gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="height">Height (in cm)</label>
+          <input type="number" class="form-control" id="height" [(ngModel)]="userDet.height" name="height">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="weight">Weight (in kg)</label>
+          <input type="number" class="form-control" id="weight" [(ngModel)]="userDet.weight" name="weight">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="targetWeight">Target Weight (in kg)</label>
+          <input type="number" class="form-control" id="targetWeight" [(ngModel)]="userDet.target_weight"
+            name="targetWeight">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="goal">Goal</label>
+          <select class="form-control" id="goal" [(ngModel)]="userDet.goal" name="goal">
+            <option value="gain">Gain</option>
+            <option value="lose">Lose</option>
+            <option value="maintain">Maintain</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lifestyle">Lifestyle</label>
+          <select class="form-control" id="lifestyle" [(ngModel)]="userDet.lifestyle" name="lifestyle">
+            <option value="sedentary">Sedentary</option>
+            <option value="light">Light</option>
+            <option value="moderate">Moderate</option>
+            <option value="active">Active</option>
+            <option value="veryActive">Very Active</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="text-center mb-1">
+        <button class="btn btn-primary" style="background-color: #da3d1a; width: 720px; border-color: transparent"
+          type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

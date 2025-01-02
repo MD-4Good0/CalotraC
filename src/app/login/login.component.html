@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>
+      <img src='../assets/Logo.png'/>
+      lotraC: Login!
+    </h2>
+    <hr class="mt-0 mb-4 text-center">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="emailId">Email</label>
+        <input type="email" class="form-control" id="emailId" [(ngModel)]="user.email_id" name="emailId">
+      </div>
+      <div class="form-group mb-3">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
+      </div>
+      <div class="text-center mb-3">
+        <button class="btn btn-primary" style="background-color: #da3d1a; border-color: transparent; width: 340px; margin: 10px 0;"
+          type="submit">Login</button>
+      </div>
+      <hr class="mt-0 mb-4 text-center">
+      <div class="text-center">
+        <button (click)="register()" class="btn btn-info" type="submit"
+          style="background-color: #242424; border-color: transparent; color: white; width: 340px;">Register</button>
+      </div>
+    </form>
+  </div>
+</div>

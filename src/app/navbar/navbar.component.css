@@ -1,0 +1,72 @@
+/* CSS for the toolbar */
+.mat-toolbar {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  position: fixed;
+  top: 0;
+  width: 100%; /* Ensure toolbar spans the entire width */
+  z-index: 1000;
+  background-color: #da3d1a; /* Adjust the background color as needed */
+}
+
+/* Styling for the clickable app title */
+.app-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition for color change */
+  text-align: center;
+  flex-grow: 1; /* Ensure the title spans available space */
+}
+
+span img {
+  width: 40px;
+  padding-right: 3px;
+}
+
+/* Styling for the toolbar buttons */
+.boton {
+  background: transparent;
+  border-color: transparent;
+  margin-left: 8px; 
+  margin-right: 8px; 
+  margin-top: 5px;
+  font-size: .8em;
+}
+
+.toolbar-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  position: absolute;
+  right: 16px; /* Align to the right edge with some padding */
+}
+
+.image-button {
+  background: none;
+  border: none;
+  width: 45px; /* Ensure the button is slightly larger than the image */
+  height: 45px;
+  margin-right: 2px;
+  display: flex;
+  justify-content: center; /* Center the image inside */
+  align-items: center;
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Smooth hover shadow transition */
+}
+
+/* Image inside the button */
+.icon-image {
+  width: 35px; /* Adjust size as needed */
+  height: 35px; /* Adjust size as needed */
+}
+
+span, div, label, h2, input, option, button {
+  font-family: 'Poppins';
+}

@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>
+      <img src='../assets/LogoWhite.png'/>
+        lotraC: Register!
+    </h2>
+    <hr class="mt-0 mb-4 text-center" style="color: #ffffff;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="user.user_name" name="firstName">
+      </div>
+      <div class="form-group mb-3">
+        <label for="emailId">Email ID</label>
+        <input type="email" class="form-control" id="emailId" [(ngModel)]="user.email_id" name="emailId">
+      </div>
+      <div class="form-group mb-3">
+        <label for="contactNumber">Contact Number</label>
+        <input type="text" class="form-control" id="contactNumber" [(ngModel)]="user.contact_number"
+          name="contactNumber">
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6 mb-3">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
+        </div>
+        <div class="form-group col-md-6 mb-3">
+          <label for="cpassword">Confirm Password</label>
+          <input type="password" class="form-control" id="cpassword" name="cpassword">
+        </div>
+      </div>
+      <div class="text-center mb-3">
+        <button class="btn btn-primary" style="background-color: #ffffff; color: #ff2f00; border-color: transparent; width: 340px; margin: 10px 0; font-weight: 600;"
+          type="submit">Register</button>
+      </div>
+      <hr class="mt-0 mb-4 text-center" style="color: #ffffff;">
+      <div class="text-center">
+        <button (click)="login()" class="btn btn-info" type="submit"
+          style="background-color: #242424; border-color: transparent; color: white; width: 340px;">Back to Login</button>
+      </div>
+    </form>
+  </div>
+</div>
